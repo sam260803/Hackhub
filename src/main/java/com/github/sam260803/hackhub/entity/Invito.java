@@ -1,5 +1,6 @@
 package com.github.sam260803.hackhub.entity;
 
+import com.github.sam260803.hackhub.state.Pendente;
 import com.github.sam260803.hackhub.state.StatoInvito;
 import java.time.LocalDateTime;
 
@@ -11,51 +12,58 @@ public class Invito {
     private Utente perUtente;
     private Team dalTeam;
 
+    public Invito() {
+        setStato(new Pendente());
+    }
+
     public StatoInvito getStato() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return stato;
     }
 
     public void setStato(StatoInvito stato) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.stato = stato;
+        if (stato != null) {
+            stato.impostaContesto(this);
+        }
     }
 
     public int getId() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return id;
     }
 
     public void setId(int id) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.id = id;
     }
 
     public LocalDateTime getDataInvito() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return dataInvito;
     }
 
     public void setDataInvito(LocalDateTime dataInvito) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.dataInvito = dataInvito;
     }
 
     public Utente getDaUtente() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return daUtente;
     }
 
     public void setDaUtente(Utente daUtente) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.daUtente = daUtente;
     }
 
     public Utente getPerUtente() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return perUtente;
     }
 
     public void setPerUtente(Utente perUtente) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.perUtente = perUtente;
     }
 
     public Team getDalTeam() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return dalTeam;
     }
 
     public void setDalTeam(Team dalTeam) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.dalTeam = dalTeam;
     }
 }
